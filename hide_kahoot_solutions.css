@@ -1,0 +1,13 @@
+div.mydiv {
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    z-index: 100;
+    background: black;
+    width: 100px;
+    top: 0;
+}
+
+div.mydiv:hover {
+    opacity: 0;
+}
