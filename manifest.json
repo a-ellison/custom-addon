@@ -1,20 +1,29 @@
 {
   "manifest_version": 2,
   "name": "Custom add-on",
-  "version": "1.4",
+  "version": "1.5",
   "description": "Does some handy stuff.",
-
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
   "content_scripts": [
     {
       "matches": ["https://create.kahoot.it/details/*", "https://create.kahoot.it/share/*"],
-      "js": ["hide_kahoot_solutions.js"],
-      "css": ["hide_kahoot_solutions.css"]
+      "js": ["hide-kahoot-solutions.js"],
+      "css": ["hide-kahoot-solutions.css"]
     },
     {
       "matches": ["*://*/*"],
-      "js": ["remove_element.js"]
+      "js": ["remove-element.js", "ace-enable-vim.js"]
     }
   ],
+  "background": {
+      "scripts": [
+          "modify-csp.js"
+      ]
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "d9f97f24-7a88-4805-a2fa-4ff423bf587d@example.com"
