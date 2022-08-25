@@ -1,29 +1,35 @@
 {
   "manifest_version": 2,
   "name": "Custom add-on",
-  "version": "1.5",
+  "version": "1.6",
   "description": "Does some handy stuff.",
-  "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
-  ],
   "content_scripts": [
     {
-      "matches": ["https://create.kahoot.it/details/*", "https://create.kahoot.it/share/*"],
-      "js": ["hide-kahoot-solutions.js"],
-      "css": ["hide-kahoot-solutions.css"]
+      "matches": [
+        "https://create.kahoot.it/details/*",
+        "https://create.kahoot.it/share/*"
+      ],
+      "js": [
+        "src/hide-kahoot-solutions.js"
+      ],
+      "css": [
+        "src/hide-kahoot-solutions.css"
+      ]
     },
     {
-      "matches": ["*://*/*"],
-      "js": ["remove-element.js", "ace-enable-vim.js"]
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "src/remove-element.js",
+        "src/enable-vim.js"
+      ]
     }
   ],
-  "background": {
-      "scripts": [
-          "modify-csp.js"
-      ]
-  },
+  "web_accessible_resources": [
+    "scripts/ace-keybinding-vim.js",
+    "scripts/codemirror-keybinding-vim.js"
+  ],
   "browser_specific_settings": {
     "gecko": {
       "id": "d9f97f24-7a88-4805-a2fa-4ff423bf587d@example.com"
