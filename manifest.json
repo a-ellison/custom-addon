@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Custom add-on",
-  "version": "1.6",
+  "version": "1.7",
   "description": "Does some handy stuff.",
   "content_scripts": [
     {
@@ -30,6 +30,10 @@
     "scripts/ace-keybinding-vim.js",
     "scripts/codemirror-keybinding-vim.js"
   ],
+  "background": {
+    "scripts": ["src/context-menu.js"]
+  },
+  "permissions": ["contextMenus"],
   "browser_specific_settings": {
     "gecko": {
       "id": "d9f97f24-7a88-4805-a2fa-4ff423bf587d@example.com"
