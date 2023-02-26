@@ -9,24 +9,18 @@
         "https://create.kahoot.it/details/*",
         "https://create.kahoot.it/share/*"
       ],
-      "js": [
-        "src/hide-kahoot-solutions.js"
-      ],
-      "css": [
-        "src/hide-kahoot-solutions.css"
-      ]
+      "js": ["src/hide-kahoot-solutions.js"],
+      "css": ["src/hide-kahoot-solutions.css"]
     },
     {
-      "matches": [
-        "*://*/*"
-      ],
-      "js": [
-        "src/remove-element.js",
-        "src/enable-vim.js"
-      ],
-      "css": [
-          "src/vim-vixen-fix.css"
-      ]
+      "matches": ["*://*/*"],
+      "js": ["src/remove-element.js"],
+      "css": ["src/vim-vixen-fix.css"]
+    },
+    {
+      "matches": ["*://*/*"],
+      "exclude_matches": ["*://expert.ethz.ch/*"],
+      "js": ["src/enable-vim.js"]
     }
   ],
   "web_accessible_resources": [
