@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Custom add-on",
-  "version": "1.9",
+  "version": "2.0",
   "description": "Does some handy stuff.",
   "content_scripts": [
     {
